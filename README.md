@@ -1,41 +1,28 @@
-# TEST:
-
-we can preview the image without having sfml for now 
-
-from root do this:
-`make &&
-./raytracer scenes/whatever.cfg &&
-./render.sh output.ppm
-`
-then the png will be rendered in screenshots/
-
-# TODO
-- SHOULD:
-
-  - rotation (parsed but not implemented yet)
-- extra important stuff tho but at the end
-
-  - anti aliasing supersampling
-
-# DONE
-
-- primitive factory ✅
-- light factory ✅
-- parser (jad) ✅
-- MUST:
-  - sphere intersection ✅
-  - plane intersection ✅
-  - camera ray generation ✅
-  - transformation ✅
-
-- SHOULD:
-  - cylinder intersection ✅
-  - cone intersection ✅
-  - drop shadows ✅
-
-- EXTRA IMPORTANT STUFF:
-  - multithreading ✅
-
-## PREVIEW
+# Raytracer
 
 ![Castle scene](docs/castle.png)
+
+This C++ multithreaded program can generate a raytraced scene from a specific config file.
+
+## Build
+
+```bash
+make # compiles the program
+make fclean # removes the compiled files
+```
+
+## Usage
+
+```bash
+./raytracer <path_to_scene_file>
+./render.sh  <path_to_scene_file> # if you don't have SFML installed
+```
+
+## ⚠️ Notes
+Please be careful when using the program, as it uses multithreading to render scenes. If you have a low-end computer, it is advised you lower the width and height values inside the .cfg files you want to render. Anything below 1000 is ok.
+
+## Concepts
+
+This project envolves the creation of several primitive forms as objects, as well as the completion of design patterns.
+
+![Castle scene](docs/example.png)
